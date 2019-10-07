@@ -67,11 +67,10 @@ namespace NodaTime.Demo
         public void Previous()
         {
             var start = new LocalDate(2014, 6, 27);
-            var end = new LocalDate(2014, 6, 26);
-
+            
             var adjuster = Snippet.For(DateAdjusters.Previous(IsoDayOfWeek.Thursday));
 
-            Assert.AreEqual(end, adjuster(start));
+            Assert.AreEqual(new LocalDate(2014, 6, 26), adjuster(start));
         }
 
         [Test]
